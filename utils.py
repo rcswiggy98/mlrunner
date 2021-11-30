@@ -6,6 +6,8 @@ import warnings
 
 _logger = logging.getLogger(__name__)
 
+NULL = object()
+
 try:
     import torch
     device_type = torch.device
@@ -38,9 +40,9 @@ def get_gpu_stats(memory_limit: int = 20 * 1024**2) -> Tuple[device_type]:
     for line in stdout.readlines():
         print(line)
 
-def get_gpus_low_mem_usage(memory_limit: int = 1024**2 * 20):
+def get_gpus_free_memory(memory_limit: int = 1024**2 * 20):
     pass
 
 
-def get_gpus_low_usage(monitoring_time: float = 4.0):
+def get_gpus_low_usage(monitoring_time: float = 4.0, pct: float = 20.0):
     pass
